@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Details</title>
+</head>
+<style>
+    body {
+        background-color: rgb(240, 254, 254);
+    }
+
+    .cont {
+        margin-left: 25%;
+        text-align: center;
+        width: 700px;
+        padding: 5px;
+        border: 1px solid gray;
+        border-radius: 8px;
+        box-shadow: 10px 10px;
+        color: rgb(4, 60, 105);
+    }
+
+    .txt {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .com {
+        padding: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        gap: 10px;
+
+        color: rgb(4, 60, 105);
+        border-radius: 8px;
+    }
+</style>
+
+<body>
+
+    <div class="cont">
+        <p class="txt">ID: <%= postDetails.id %>
+        </p>
+        <p class="txt">Title: <%= postDetails.title %>
+        </p>
+        <p class="txt">Body:
+            <%= postDetails.body %>
+        </p>
+    </div>
+    <div class="com">
+        <!-- Add more details as needed -->
+        <p><strong>COMMENTS</strong></p>
+        <ol>
+            <% comments.forEach(comment=> { %>
+                <li>
+                    Name:
+                    <%= comment.name %> <br>
+                        Email:
+                        <%= comment.email %> <br>
+                            Comment:
+                            <%= comment.body %>
+                </li>
+                <% }); %>
+        </ol>
+    </div>
+</body>
+
+</html>
